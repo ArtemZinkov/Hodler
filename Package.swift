@@ -13,14 +13,14 @@ let package = Package(
             targets: ["Hodler"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/horizontalsystems/BitcoinCore.Swift.git", .upToNextMajor(from: "2.0.0")),
+        .package(url: "https://github.com/ArtemZinkov/BitcoinCore.git", .branch("master")),
         .package(url: "https://github.com/horizontalsystems/HsCryptoKit.Swift.git", .upToNextMajor(from: "1.2.1")),
     ],
     targets: [
         .target(
             name: "Hodler",
             dependencies: [
-                .product(name: "BitcoinCore", package: "BitcoinCore.Swift"),
+                "BitcoinCore",
                 .product(name: "HsCryptoKit", package: "HsCryptoKit.Swift"),
             ]
         ),
